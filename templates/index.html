@@ -1,0 +1,218 @@
+{% extends "./base.html" %}
+
+{% block title %}
+Ryan Cabell Portfolio
+{% endblock %}
+
+{% block head %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Prompt', sans-serif;
+        color: white;
+        background: #202731;
+        overflow-x: hidden;
+    }
+
+    section {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 400px;
+        padding: 100px 20vw;
+    }
+
+    .blue {
+        background: #3c31dd;
+    }
+
+    .red {
+        background: #dd3f31;
+    }
+
+    .pink {
+        background: #ff0066;
+    }
+
+    .green {
+        background: #788c4a;
+    }
+
+    .dark {
+        background: #0f0f10;
+    }
+
+    .curve {
+        position: absolute;
+        height: 255px;
+        width: 100%;
+        bottom: 0;
+    }
+
+    .curve::before {
+        content: '';
+        display: block;
+        position: absolute;
+        border-radius: 100% 50%;
+        width: 55%;
+        height: 100%;
+        background-color: #202731;
+        transform: translate(85%, 60%);
+    }
+
+    .curve::after {
+        content: '';
+        display: block;
+        position: absolute;
+        border-radius: 100% 50%;
+        width: 55%;
+        height: 100%;
+        background-color: #788c4a;
+        transform: translate(-4%, 40%);
+        z-index: -1;
+        /*behind*/
+    }
+
+    .bubble {
+        content: '';
+    }
+
+    .bubble::after {
+        content: '';
+        border-top-left-radius: 50% 100%;
+        border-top-right-radius: 50% 100%;
+        position: absolute;
+        bottom: 0;
+        height: 85%;
+        width: 100%;
+        background-color: #3c31dd;
+    }
+
+    .waveio {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+    }
+
+    .waveio svg {
+        position: relative;
+        display: block;
+        width: calc(113% + 1.3px);
+        height: 104px;
+        transform: rotateY(180deg);
+    }
+
+    .waveio .shape-fill {
+        fill: #DD3F31;
+    }
+
+    .spacer {
+        aspect-ratio: 1920/300;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .layeredWaves960-300 {
+        background-image: url('/static/layeredWaves960-300.svg');
+    }
+</style>
+{%endblock%}
+
+{% block content %}
+<section class="green">
+    <h1>Nice Curves</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi impedit est deserunt eum omnis ut inventore
+        tempora ipsa sapiente! Veritatis, iste fugit! Velit nulla, maxime laudantium quasi corporis consectetur aperiam.
+    </p>
+    <div class="curve"></div>
+</section>
+<section>
+    <h1>Nice Curves</h1>
+    <p>Soluta, illo. Libero exercitationem quis provident mollitia nulla, blanditiis porro magnam, saepe necessitatibus,
+        velit perspiciatis sed. Praesentium corrupti maxime nisi accusamus sed? Cumque dolore quasi ad fuga obcaecati
+        magni vero.</p>
+</section>
+<section class="bubble">
+    <h1>Nice Curves</h1>
+    <p>Adipisci dolore architecto eaque ipsum perferendis beatae qui nihil consequatur magnam molestiae ea
+        reprehenderit, eius libero eos sunt ipsa consequuntur quisquam quidem atque corporis. Voluptate cum dolore
+        eveniet ducimus mollitia?</p>
+</section>
+<section class="blue">
+    <h1>Nice Curves</h1>
+    <p>Officia repellat in magni placeat aperiam odio pariatur nobis, quam accusamus at asperiores commodi expedita ex
+        sint libero quos voluptates! Minus, velit aspernatur! Veniam nihil accusamus, minus itaque impedit ut!</p>
+</section>
+<section class="red">
+    <h1>Nice Curves</h1>
+    <p>Doloremque quam blanditiis consequuntur eius assumenda fuga quae earum consectetur aut. Mollitia facere accusamus
+        perferendis, assumenda dolorum recusandae, sequi quas praesentium illum aperiam voluptate minus labore doloribus
+        culpa repellat reprehenderit.</p>
+
+    <div class="waveio">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                opacity=".25" class="shape-fill" fill="#DD3F31" fill-opacity="1"></path>
+            <path
+                d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+                opacity=".5" class="shape-fill" fill="#DD3F31" fill-opacity="1"></path>
+            <path
+                d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+                class="shape-fill" fill="#DD3F31" fill-opacity="1"></path>
+        </svg>
+    </div>
+</section>
+
+<div class="spacer">
+    <svg id="visual" viewBox="0 0 1920 540" width="1920" height="540" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+        <rect x="0" y="0" width="1920" height="540" fill="#202731"></rect>
+        <path
+            d="M0 123L16 126.7C32 130.3 64 137.7 96 148.5C128 159.3 160 173.7 192 176.5C224 179.3 256 170.7 288 164.3C320 158 352 154 384 146.5C416 139 448 128 480 129.2C512 130.3 544 143.7 576 148.7C608 153.7 640 150.3 672 152.7C704 155 736 163 768 165.7C800 168.3 832 165.7 864 161.7C896 157.7 928 152.3 944 149.7L1920 147L1920 0L944 0C928 0 896 0 864 0C832 0 800 0 768 0C736 0 704 0 672 0C640 0 608 0 576 0C544 0 512 0 480 0C448 0 416 0 384 0C352 0 320 0 288 0C256 0 224 0 192 0C160 0 128 0 96 0C64 0 32 0 16 0L0 0Z"
+            fill="#601937"></path>
+        <path
+            d="M0 142L16 139.5C32 137 64 132 96 125.2C128 118.3 160 109.7 192 104.8C224 100 256 99 288 104.8C320 110.7 352 123.3 384 127.7C416 132 448 128 480 130.3C512 132.7 544 141.3 576 145.7C608 150 640 150 672 143.7C704 137.3 736 124.7 768 125.7C800 126.7 832 141.3 864 143.3C896 145.3 928 134.7 944 129.3L1920 124L1920 0L944 0C928 0 896 0 864 0C832 0 800 0 768 0C736 0 704 0 672 0C640 0 608 0 576 0C544 0 512 0 480 0C448 0 416 0 384 0C352 0 320 0 288 0C256 0 224 0 192 0C160 0 128 0 96 0C64 0 32 0 16 0L0 0Z"
+            fill="#811d3d"></path>
+        <path
+            d="M0 72L16 79.3C32 86.7 64 101.3 96 102.2C128 103 160 90 192 82.2C224 74.3 256 71.7 288 78.5C320 85.3 352 101.7 384 106.2C416 110.7 448 103.3 480 99.3C512 95.3 544 94.7 576 91.8C608 89 640 84 672 84.3C704 84.7 736 90.3 768 91C800 91.7 832 87.3 864 87.2C896 87 928 91 944 93L1920 95L1920 0L944 0C928 0 896 0 864 0C832 0 800 0 768 0C736 0 704 0 672 0C640 0 608 0 576 0C544 0 512 0 480 0C448 0 416 0 384 0C352 0 320 0 288 0C256 0 224 0 192 0C160 0 128 0 96 0C64 0 32 0 16 0L0 0Z"
+            fill="#a2233e"></path>
+        <path
+            d="M0 84L16 83.8C32 83.7 64 83.3 96 80.2C128 77 160 71 192 69.8C224 68.7 256 72.3 288 71C320 69.7 352 63.3 384 58.7C416 54 448 51 480 55C512 59 544 70 576 77C608 84 640 87 672 83.2C704 79.3 736 68.7 768 63.8C800 59 832 60 864 61.3C896 62.7 928 64.3 944 65.2L1920 66L1920 0L944 0C928 0 896 0 864 0C832 0 800 0 768 0C736 0 704 0 672 0C640 0 608 0 576 0C544 0 512 0 480 0C448 0 416 0 384 0C352 0 320 0 288 0C256 0 224 0 192 0C160 0 128 0 96 0C64 0 32 0 16 0L0 0Z"
+            fill="#c12e3a"></path>
+        <path
+            d="M0 55L16 51.2C32 47.3 64 39.7 96 37.3C128 35 160 38 192 40.7C224 43.3 256 45.7 288 44.8C320 44 352 40 384 39.7C416 39.3 448 42.7 480 42C512 41.3 544 36.7 576 31.8C608 27 640 22 672 19.7C704 17.3 736 17.7 768 20.7C800 23.7 832 29.3 864 28.7C896 28 928 21 944 17.5L1920 14L1920 0L944 0C928 0 896 0 864 0C832 0 800 0 768 0C736 0 704 0 672 0C640 0 608 0 576 0C544 0 512 0 480 0C448 0 416 0 384 0C352 0 320 0 288 0C256 0 224 0 192 0C160 0 128 0 96 0C64 0 32 0 16 0L0 0Z"
+            fill="#dd3f31"></path>
+    </svg>
+</div>
+
+<section>
+    <h1>Nice Curves</h1>
+    <p>Eveniet, accusamus quas? Odio eum quae corporis necessitatibus eius ullam magnam, eos blanditiis exercitationem
+        accusantium consequuntur totam nisi non soluta officia explicabo labore quis cum. Corporis laborum at temporibus
+        delectus?</p>
+</section>
+<section>
+    <h1>Nice Curves</h1>
+    <p>Doloribus ratione quo at inventore quam odit animi recusandae temporibus voluptatum corrupti. Ratione rerum
+        distinctio voluptates pariatur expedita, dolorem est laborum, suscipit consequuntur nam odit quisquam mollitia
+        alias et. Adipisci?</p>
+</section>
+<section>
+    <h1>Nice Curves</h1>
+    <p>Temporibus tempore ratione dignissimos reprehenderit explicabo, accusantium nobis ipsa et, magni perferendis
+        illum consectetur. Magnam magni rem accusamus eligendi a aliquid, officia repudiandae itaque eius corrupti.
+        Voluptate nisi deleniti esse.</p>
+</section>
+
+{% endblock %}
